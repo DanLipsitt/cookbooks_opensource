@@ -25,6 +25,8 @@ end
 # mongodb is part of the default ubuntu repository as of 10.04
 if node[:mongodb][:release] == 'stable' && node[:platform_version] == '10.04'
   package "mongodb"
+elsif node[:mongodb][:release] == 'stable' && node[:platform_version] >= '10.10'
+  package "mongodb-10gen"
 else
   template "/etc/apt/sources.list.d/mongo_sources.list" do
     source "mongo_sources.list"
