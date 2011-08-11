@@ -10,8 +10,8 @@ attribute "mongodb", :display_name => "MongoDB", :type => "hash"
 
 attribute "mongodb/release", 
   :display_name => "MongoDB new releases", 
-  :description => "By default this recipe will install the default Ubuntu package.  To override: Set this attribute to use newer sources direct from mongodb.  Valid values are 'stable', 'unstable', or 'snapshot').", 
+  :description => "By default this recipe will install the 10gen stable Ubuntu package.  To override: Set this attribute to use other sources.  Valid values are 'stable', 'unstable', or 'snapshot' for Ubuntu packages, or '10gen' or '10gen-unstable' for packages by the MongoDB creators.", 
   :required => false, 
   :recipes => ["mongodb::default"],
-  :choice => ['stable', 'unstable', 'snapshot']
+  :choice => ['stable', 'unstable', 'snapshot', '10gen', '10gen-unstable']
 
